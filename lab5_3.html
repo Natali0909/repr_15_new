@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 6.3 - Шифрування тексту</title>
+</head>
+<body>
+    <h2>Шифрування тексту: заміна літер на наступні</h2>
+
+    <script>
+        // Початкове речення
+        let text = "Привіт, це тестовий текст";
+        document.write("<strong>Початковий текст:</strong> " + text + "<br>");
+
+        // Опис принципу шифрування
+        document.write("<strong>Принцип шифрування:</strong> кожна літера замінюється на наступну в алфавіті (останнє 'я' переходить в 'а').<br>");
+
+        // Функція шифрування
+        function shiftLetter(char) {
+            if (/[а-яА-Я]/.test(char)) {
+                return String.fromCharCode((char.charCodeAt(0) - 1040 + 1) % 32 + 1040);
+            }
+            return char;
+        }
+
+        // Зашифрований текст
+        let encryptedText = text.split("").map(shiftLetter).join("");
+        document.write("<strong>Зашифрований текст:</strong> " + encryptedText);
+    </script>
+
+    <!-- Кнопка повернення на головну сторінку -->
+    <button onclick="window.location.href='index.html'">Повернутися на головну сторінку</button>
+</body>
+</html>

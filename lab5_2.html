@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 6.2 - Визначення слів та видалення літер</title>
+</head>
+<body>
+    <h2>Кількість слів з другою літерою 'р' та видалення останньої літери</h2>
+    
+    <script>
+        // Початкове речення
+        let sentence = "Прекрасний приклад речення";
+        document.write("<strong>Початкове речення:</strong> " + sentence + "<br>");
+
+        // Визначення кількості слів з другою буквою 'р'
+        let words = sentence.split(" ");
+        let countWordsWithSecondR = words.filter(word => word[1] === 'р').length;
+
+        // Видалення останньої літери у кожному слові
+        let modifiedSentence = words.map(word => word.slice(0, -1)).join(" ");
+        document.write("<strong>Речення після видалення останньої букви:</strong> " + modifiedSentence + "<br>");
+        document.write("<strong>Кількість слів з другою літерою 'р':</strong> " + countWordsWithSecondR);
+    </script>
+
+    <!-- Кнопка повернення на головну сторінку -->
+    <button onclick="window.location.href='index.html'">Повернутися на головну сторінку</button>
+</body>
+</html>

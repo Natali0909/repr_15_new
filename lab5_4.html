@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 6.4 - Перемішування літер у словах</title>
+</head>
+<body>
+    <h2>Перемішування літер у кожному слові</h2>
+    
+    <script>
+        // Початкове речення
+        let text = "Це приклад шифрування тексту";
+        document.write("<strong>Початковий текст:</strong> " + text + "<br>");
+
+        // Функція для перемішування літер в слові
+        function shuffleWord(word) {
+            if (word.length <= 2) return word;
+            let middle = word.slice(1, -1).split("");
+            for (let i = middle.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [middle[i], middle[j]] = [middle[j], middle[i]];
+            }
+            return word[0] + middle.join("") + word[word.length - 1];
+        }
+
+        // Текст після перемішування
+        let shuffledText = text.split(" ").map(shuffleWord).join(" ");
+        document.write("<strong>Текст після перемішування:</strong> " + shuffledText);
+    </script>
+
+    <!-- Кнопка повернення на головну сторінку -->
+    <button onclick="window.location.href='index.html'">Повернутися на головну сторінку</button>
+</body>
+</html>

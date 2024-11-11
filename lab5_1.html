@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4.1 - Підрахунок B між + та -</title>
+</head>
+<body>
+    <script>
+        // Початкове речення
+        let str = "A+B-A+BA+A+BA+BB+A+B+A+B";
+        document.write("<strong>Початкове речення:</strong> " + str + "<br>");
+
+        // Вставка пробілу після кожного символу 'A'
+        let modifiedStr = str.replace(/A/g, 'A ');
+        document.write("<strong>Речення після вставки пробілів:</strong> " + modifiedStr + "<br>");
+
+        // Підрахунок символів 'B' між '+' та '-'
+        let bCount = 0;
+        
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === '+' && str[i + 2] === '-' && str[i + 1] === 'B') {
+                bCount++;
+            }
+        }
+
+        document.write("<strong>Кількість 'B' між '+' та '-':</strong> " + bCount);
+    </script>
+</body>
+</html>
